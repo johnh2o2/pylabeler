@@ -231,7 +231,11 @@ class Labeler(Menu):
 		self.options_menu = None
 		self.options_menu = MultipleMenu(self.available_labels, self.menu_axis, self.available_labels,callback_func=self.update_option_menu, xtopleft=0.6, menu_title='Show')
 
-
+		print "pylabeler instance running..."
+		print "-----------------------------"
+		print " * Use the < (to go to previous ID)"
+		print "       and > (to go to next ID)"
+		print " * Results are automatically saved to %s upon exiting"%(label_file)
 		self.display()
 
 	def update_option_menu_button_text(self):
