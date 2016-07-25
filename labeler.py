@@ -191,9 +191,12 @@ def write_labels(labels, label_file):
 
 
 class Labeler(Menu):
-	def __init__(self, image_files, label_file, classes, keyboard_shortcuts, buffer_number=100):
+	def __init__(self, image_files, label_file, classes, keyboard_shortcuts, indices=None, buffer_number=100):
 		# Initialize...
-		self.all_ids = sorted(image_files.keys())
+		if indices is None:
+			indices = sorted(image_files.keys())
+
+		self.all_ids = indices
 		self.ids = [ ID for ID in self.all_ids ]
 		self.index = 0
 		self.label_file = label_file
